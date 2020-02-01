@@ -1,0 +1,97 @@
+/* July 30,2007 */
+
+/* Users table is already in use from the parent project.  If one does not exist, it needs to be created with a bCalAccess field */
+ALTER TABLE Users ADD bCalAccess TINYINT(1) NOT NULL DEFAULT 0 AFTER bDeleted;
+
+CREATE TABLE CalendarFiles (
+  ID MEDIUMINT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  chrKEY VARCHAR(40) NOT NULL,
+  idUser SMALLINT NOT NULL,
+  dbFileSize DOUBLE NOT NULL DEFAULT 0,
+  dtCreated DATETIME NOT NULL,
+  dtModified DATETIME,
+  chrFileType VARCHAR(30) NOT NULL,
+  chrCalendarFile VARCHAR(150) NOT NULL,
+  index(chrKEY),
+  index(idUser)
+) ENGINE=MyISAM, CHARACTER SET utf8;
+
+CREATE TABLE CalendarFileAssocs (
+  ID MEDIUMINT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  idUser SMALLINT NOT NULL,
+  idCalendar SMALLINT NOT NULL,
+  idFile SMALLINT NOT NULL,
+  dtCreated DATETIME NOT NULL,
+  index(idUser)
+) ENGINE=MyISAM, CHARACTER SET utf8;
+
+CREATE TABLE CalendarEvents (
+  ID MEDIUMINT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  chrKEY VARCHAR(40) NOT NULL,
+  bDeleted TINYINT(1) NOT NULL DEFAULT 0,
+  bAllDay TINYINT(1) NOT NULL DEFAULT 0,
+  idUser SMALLINT NOT NULL,
+  idCalendarType TINYINT(2) NOT NULL,
+  tBegin TIME NOT NULL,
+  tEnd TIME NOT NULL,
+  dBegin DATE NOT NULL,
+  dEnd DATE NOT NULL,
+  dtCreated DATETIME NOT NULL,
+  dtModified DATETIME,
+  chrCalendarEvent VARCHAR(150) NOT NULL,
+  chrReoccur VARCHAR(30) NOT NULL,
+  chrSeries VARCHAR(40) NOT NULL,
+  txtContent TEXT,
+  index(chrKEY),
+  index(chrSeries),
+  index(bDeleted),
+  index(dBegin)
+) ENGINE=MyISAM, CHARACTER SET utf8;
+
+
+CREATE TABLE CalendarTypes (
+  ID MEDIUMINT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  chrKEY VARCHAR(40) NOT NULL,
+  bDeleted TINYINT(1) NOT NULL DEFAULT 0,
+  chrCalendarType VARCHAR(150) NOT NULL,
+  chrColorText VARCHAR(20) NOT NULL DEFAULT '#ccc',
+  chrColorBG VARCHAR(20) NOT NULL DEFAULT '#333'
+) ENGINE=MyISAM, CHARACTER SET utf8;
+
+
+CREATE TABLE CalendarAccessTypes (
+  ID TINYINT(2) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  chrKEY VARCHAR(40) NOT NULL,
+  bDeleted TINYINT(1) NOT NULL DEFAULT 0,
+  chrCalendarAccessTypes VARCHAR(150) NOT NULL
+) ENGINE=MyISAM, CHARACTER SET utf8;
+INSERT INTO CalendarAccessTypes (chrCalendarAccessTypes) VALUES ('Add/Edit/Delete'),('Edit'),('Delete');
+
+
+CREATE TABLE CalendarAccess (
+  ID MEDIUMINT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  chrKEY VARCHAR(40) NOT NULL,
+  bDeleted TINYINT(1) NOT NULL DEFAULT 0,
+  idAccessType SMALLINT NOT NULL,
+  idUser SMALLINT NOT NULL,
+  idCalendarEvent SMALLINT NOT NULL,
+  index(chrKEY),
+  index(bDeleted),
+  index(idUser)
+) ENGINE=MyISAM, CHARACTER SET utf8;
+
+
+/* August 10, 2007 */
+
+CREATE TABLE CalendarQueries (
+  ID SMALLINT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  chrKEY VARCHAR(40) NOT NULL,
+  bDeleted TINYINT(1) NOT NULL DEFAULT 0,
+  dtCreated DATETIME NOT NULL,
+  idUser SMALLINT NOT NULL,
+  chrCalendarQuery TEXT,
+  index(chrKEY),
+  index(bDeleted),
+  index(idUser)
+) ENGINE=MyISAM, CHARACTER SET utf8;
+

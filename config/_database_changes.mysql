@@ -1,0 +1,182 @@
+/* July 24, 2006 */
+ALTER TABLE Content_Static CHANGE textSourceCode txtSourceCode MEDIUMTEXT NOT NULL DEFAULT '';
+ALTER TABLE Content_Static ADD chrTitle VARCHAR(50) NOT NULL DEFAULT '' AFTER ID;
+ALTER TABLE Content_Static CHANGE ID ID smallint(3) NOT NULL AUTO_INCREMENT;
+
+ALTER TABLE Content_Dynamic CHANGE chrPageName chrPageTitle VARCHAR(75) NOT NULL;
+ALTER TABLE Content_Dynamic CHANGE bDeleted bDeleted TINYINT(1) NOT NULL DEFAULT 0;
+
+
+/* July 26, 2006 */
+ALTER TABLE Stores ADD idStoreManager SMALLINT NOT NULL DEFAULT 0 AFTER idRegion;
+ALTER TABLE Stores ADD idTheaterCoordinator SMALLINT NOT NULL DEFAULT 0 AFTER idRegion;
+
+ALTER TABLE Stores DROP idStoreManager;
+ALTER TABLE Stores DROP iTheaterCoordinator;
+ALTER TABLE Stores DROP chrBusinessRep;
+ALTER TABLE Stores DROP chrBusinessConsultant;
+ALTER TABLE Stores DROP chrCreative;
+
+CREATE TABLE Levels (
+  ID TINYINT NOT NULL AUTO_INCREMENT,
+  chrName VARCHAR(40) NOT NULL,
+  PRIMARY KEY (ID)
+) TYPE=InnoDB, CHARACTER SET utf8;
+INSERT INTO Levels (ID, chrName) VALUES (1,'Corporate User'),(2,'Regional Manager'),(3,'Store Manager'),(4,'Theater Coordinator');
+
+ALTER TABLE Users ADD idLevel TINYINT NOT NULL DEFAULT 0 AFTER ID;
+
+
+/* July 27, 2006 */
+ALTER TABLE Events ADD txtRejection MEDIUMTEXT;
+
+/* August 18, 2006 */
+ALTER TABLE Stores ADD bIgnore TINYINT AFTER bDeleted;
+
+/* August 25, 2006 */
+ALTER TABLE EventPresenters ADD intEventSeries BIGINT(20) default '0';
+ALTER TABLE EventProducts ADD intEventSeries BIGINT(20) default '0';
+
+/* September 20, 2006 */
+ALTER TABLE StoreMonths ADD dtStamp DATETIME NOT NULL;
+
+/* September 21, 2006 */
+ALTER TABLE Events ADD bEmailSent TINYINT NOT NULL DEFAULT "0" AFTER bApproved;
+
+/* November 6, 2006 */
+CREATE TABLE Recaps (
+  ID TINYINT NOT NULL AUTO_INCREMENT,
+  idEvent mediumint NOT NULL,
+  rEnjoy TINYINT,
+  rSuccess TINYINT,
+  chrLastName VARCHAR(25),
+  chrFirstName VARCHAR(25),
+  chrRehost VARCHAR(5),
+  chrAddstaff VARCHAR(5),
+  chrStatus VARCHAR(40) NOT NULL DEFAULT 'Incomplete',
+  chrAttendance VARCHAR(20),
+  chrSales VARCHAR(20),
+  chrApple VARCHAR(50),
+  chrPresenters VARCHAR(50),
+  chrOtherExplain VARCHAR(200),
+  txtFeedback text,
+  PRIMARY KEY (ID)
+) TYPE=InnoDB, CHARACTER SET utf8;
+
+CREATE TABLE RecapImages (
+  ID MEDIUMINT NOT NULL AUTO_INCREMENT,
+  idEvent mediumint NOT NULL,
+  intSize INT NOT NULL DEFAULT 0,
+  chrName VARCHAR(100) NOT NULL,
+  chrType VARCHAR(30) NOT NULL,
+  PRIMARY KEY (ID)
+) TYPE=InnoDB, CHARACTER SET utf8;
+
+/* November 8, 2006 */
+ALTER TABLE Events ADD dtCreated DATETIME NOT NULL AFTER idEventType;
+ALTER TABLE Events ADD dtModified TIMESTAMP NOT NULL AFTER idEventType;
+
+/* November 15, 2006 */
+ALTER TABLE Recaps ADD txtSpecialThanks TEXT;
+ALTER TABLE Recaps ADD txtCustQuote TEXT;
+ALTER TABLE Recaps ADD txtSpecQuote TEXT;
+ALTER TABLE Recaps ADD txtImproveEvent TEXT;
+ALTER TABLE Recaps ADD txtIssues TEXT;
+ALTER TABLE Recaps ADD chrEmail VARCHAR(50) AFTER chrLastName;
+
+/* November 28, 2006 */
+ALTER TABLE Events ADD chrImageName VARCHAR(50) AFTER tEnd;
+ALTER TABLE Events ADD intImageSize INT NOT NULL AFTER tEnd;
+ALTER TABLE Events ADD chrImageType VARCHAR(50) AFTER chrImageName;
+
+/* December 12, 2006 */
+ALTER TABLE Events ADD bReviewed TINYINT NOT NULL DEFAULT 1 AFTER bEmailSent;
+
+/* March 23, 2007 */
+ALTER TABLE Events ADD idEventTitle SMALLINT NOT NULL AFTER idEventType;
+UPDATE Events SET idEventTitle=1 WHERE chrDescription="" AND idEventType=6 AND chrTitle LIKE "%iLife%";
+UPDATE Events SET idEventTitle=2 WHERE chrDescription="" AND idEventType=6 AND chrTitle LIKE "%iWork%";
+UPDATE Events SET idEventTitle=3 WHERE chrDescription="" AND idEventType=6 AND chrTitle LIKE "%.Mac%";
+UPDATE Events SET idEventTitle=4 WHERE chrDescription="" AND idEventType=6 AND chrTitle LIKE "%iPod%iTunes%";
+UPDATE Events SET idEventTitle=5 WHERE chrDescription="" AND idEventType=6 AND chrTitle LIKE "%Getting%Started%";
+UPDATE Events SET idEventTitle=6 WHERE chrDescription="" AND idEventType=6 AND chrTitle LIKE "%Row%Photo%";
+UPDATE Events SET idEventTitle=7 WHERE chrDescription="" AND idEventType=6 AND chrTitle LIKE "%OS%X%Tiger%";
+UPDATE Events SET idEventTitle=8 WHERE chrDescription="" AND idEventType=7 AND chrTitle LIKE "%Final%Cut%Pro%5%";
+UPDATE Events SET idEventTitle=9 WHERE chrDescription="" AND idEventType=7 AND chrTitle LIKE "%Aperture%Pro%";
+UPDATE Events SET idEventTitle=10 WHERE chrDescription="" AND idEventType=7 AND chrTitle LIKE "%Logic%Express%7%";
+UPDATE Events SET idEventTitle=11 WHERE chrDescription="" AND idEventType=7 AND chrTitle LIKE "%Motion%Pro%";
+UPDATE Events SET idEventTitle=12 WHERE chrDescription="" AND idEventType=7 AND chrTitle LIKE "%Final%Cut%Express%Pro%";
+UPDATE Events SET idEventTitle=13 WHERE chrDescription="" AND idEventType=12 AND chrTitle LIKE "%Camp%";
+UPDATE Events SET idEventTitle=14 WHERE chrDescription="" AND idEventType=16 AND chrTitle LIKE "%School&Nights%";
+UPDATE Events SET idEventTitle=15 WHERE chrDescription="" AND idEventType=11 AND chrTitle LIKE "%John%Lennon%";
+UPDATE Events SET idEventTitle=16 WHERE chrDescription="" AND idEventType=9 AND chrTitle LIKE "%Business%Day%";
+UPDATE Events SET idEventTitle=17 WHERE chrDescription="" AND idEventType=8 AND chrTitle LIKE "%Studio%Series%";
+UPDATE Events SET idEventTitle=18 WHERE chrDescription="" AND idEventType=6 AND chrTitle LIKE "%iPhoto%";
+UPDATE Events SET idEventTitle=19 WHERE chrDescription="" AND idEventType=6 AND chrTitle LIKE "%iMovie%";
+UPDATE Events SET idEventTitle=20 WHERE chrDescription="" AND idEventType=6 AND chrTitle LIKE "%iWeb%";
+UPDATE Events SET idEventTitle=21 WHERE chrDescription="" AND idEventType=6 AND chrTitle LIKE "%GarageBand%";
+UPDATE Events SET idEventTitle=22 WHERE chrDescription="" AND idEventType=6 AND chrTitle LIKE "%Podcast%";
+UPDATE Events SET idEventTitle=23 WHERE chrDescription="" AND idEventType=6 AND chrTitle LIKE "%iDVD%";
+UPDATE Events SET idEventTitle=24 WHERE chrDescription="" AND idEventType=7 AND chrTitle LIKE "%Logic%Pro%";
+UPDATE Events SET idEventTitle=25 WHERE chrDescription="" AND idEventType=7 AND chrTitle LIKE "%DVD%Studio%";
+UPDATE Events SET idEventTitle=26 WHERE chrDescription="" AND idEventType=7 AND chrTitle LIKE "%Photoshop%";
+UPDATE Events SET idEventTitle=27 WHERE chrDescription="" AND idEventType=18 AND chrTitle LIKE "%Marketing%Dynamic%Digital%";
+UPDATE Events SET idEventTitle=28 WHERE chrDescription="" AND idEventType=18 AND chrTitle LIKE "%Email%Marketing%";
+UPDATE Events SET idEventTitle=29 WHERE chrDescription="" AND idEventType=18 AND chrTitle LIKE "%Point%Sale%Solutions%";
+UPDATE Events SET idEventTitle=30 WHERE chrDescription="" AND idEventType=18 AND chrTitle LIKE "%Architecture%Mac%";
+UPDATE Events SET idEventTitle=31 WHERE chrDescription="" AND idEventType=18 AND chrTitle LIKE "%Podcasting%Small%Business%";
+UPDATE Events SET idEventTitle=32 WHERE chrDescription="" AND idEventType=18 AND chrTitle LIKE "%Marketing%Business%Mac%";
+UPDATE Events SET idEventTitle=33 WHERE chrDescription="" AND idEventType=18 AND chrTitle LIKE "%Quickbooks%2006%";
+UPDATE Events SET idEventTitle=34 WHERE chrDescription="" AND idEventType=18 AND chrTitle LIKE "%FileMaker%8.5%";
+UPDATE Events SET idEventTitle=35 WHERE chrDescription="" AND idEventType=18 AND chrTitle LIKE "%Microsoft%Office%2004%";
+UPDATE Events SET idEventTitle=36 WHERE chrDescription="" AND idEventType=18 AND chrTitle LIKE "%Running%Medical%Practice%";
+UPDATE Events SET idEventTitle=37 WHERE chrDescription="" AND idEventType=18 AND chrTitle LIKE "%Websites%Blogs%Easy%";
+UPDATE Events SET idEventTitle=38 WHERE chrDescription="" AND idEventType=18 AND chrTitle LIKE "%Creating%Movies%Business%";
+
+
+/* March 28, 2007 */
+CREATE TABLE CustomReports (
+  ID SMALLINT NOT NULL AUTO_INCREMENT,
+  bDeleted TINYINT(1) NOT NULL DEFAULT 0,
+  idUser MEDIUMINT NOT NULL,
+  chrName VARCHAR(255) NOT NULL,
+  dtStamp TIMESTAMP NOT NULL,
+  txtQuery TINYTEXT,
+  txtWebColumns TINYTEXT,
+  txtExcelColumns TINYTEXT,
+  PRIMARY KEY (ID)
+) TYPE=InnoDB, CHARACTER SET utf8;
+
+/* March 23, 2007 */
+ALTER TABLE Events ADD dtReviewed DATETIME AFTER tEnd;
+
+/* April 23, 2007 */
+ALTER TABLE Events ADD bDissaproved TINYINT(1) NOT NULL DEFAULT 0 AFTER bApproved;
+ALTER TABLE Events ADD idEditor SMALLINT(3) AFTER idStore;
+
+/* May 10, 2007 */
+CREATE TABLE Localization (
+  ID TINYINT NOT NULL AUTO_INCREMENT,
+  bDeleted TINYINT(1) NOT NULL DEFAULT 0,
+  chrLocalization VARCHAR(30) NOT NULL,
+  PRIMARY KEY (ID)
+) TYPE=InnoDB, CHARACTER SET utf8;
+INSERT INTO Localization (ID, chrLocalization) VALUES (1,'US'),(2,'UK'),(3,'French'),(4,'Japanese'),(5,'Italian'),(6,'Spanish'),(7,'Canadian'),(8,'Chinese');
+
+ALTER TABLE EventTypes ADD idLocalization TINYINT DEFAULT 1 AFTER idEventCategory;
+ALTER TABLE Stores ADD idLocalization TINYINT DEFAULT 1 AFTER idStoreManager;
+
+
+/* June 1 2007 */
+ALTER TABLE Stores ADD bIgnoreRecaps TINYINT(1) NOT NULL DEFAULT 0 AFTER bIgnore;
+
+/* June 6 2007 */
+ALTER TABLE Users ADD chrLoc VARCHAR(30) NOT NULL DEFAULT 1 AFTER idLevel;
+
+/* July 13 2007 */
+ALTER TABLE EventTypes ADD bShow tinyint(1) NOT NULL DEFAULT 1 AFTER bDeleted;
+ALTER TABLE EventTypeNames ADD bShow tinyint(1) NOT NULL DEFAULT 1 AFTER bDeleted;
+
+/* August 3,2007 */
+ALTER TABLE Users ADD chrKEY VARCHAR(40) NOT NULL AFTER ID;
+

@@ -1,0 +1,333 @@
+/* CSS Document */
+
+/* Some of this revised by AG October Revision 2.0 October 16th 2007 Version 2.0 */
+
+/* Brandnew CSS will be placed on bottom and commented as we might want to get ride of some of the old CSS for the 2.0 version */
+
+body,td,th {
+	font: 12px 'Lucida Grande', Geneva, Arial, Verdana, sans-serif;
+	color: #000000;
+}
+
+body {
+	background: url(../../images/body_bg.gif) #4d4d4d repeat-x;
+	margin-top: 15px;
+	padding:0px;
+}
+
+A:link, A:hover, A:visited {text-decoration: none;}
+IMG { border: 0; }
+
+/* Login Bar CSS */
+.loginbar {
+	font-size: 10px;
+	color: #333333;
+}
+
+.loginbar a:link, a:hover, a:visited {
+	color: #333333;
+}
+
+.FormButtons { margin: 0 0 10px; }
+
+/* User Navigation Links */
+.Navigation_Header { font-size: 14px; padding: 5px 15px 0; margin: 0px; }
+.Navigation p { line-height: 14px; }
+.Navigation UL { padding: 0 15px 5px; margin: 0 0 0 18px; }
+.Navigation a, a:link, a:hover, a:visited {	color: #000; }
+
+
+/* Login Page Info */
+div.outer { margin: 5px 10px; }
+div.outer div.login { border: 1px solid #C0C0C0; width: 250px; margin-left: 30px }
+div.login div.header{ background-color: #C3C4C5; font-size: 14px; font-weight: bold; padding: 3px; margin-bottom: 10px; }
+div.login table.tblLogin TD { padding: 0 5px 2px; }
+
+div.outer div.signup { border: 1px solid #C0C0C0; width: 525px; margin-left: 30px;}
+div.signup div.header{ background-color: #C3C4C5; font-size: 14px; font-weight: bold; padding: 3px; margin-bottom: 10px; }
+
+
+/* Administration Navigation Links */
+.Admin_Nav { background-color: #f1f1f1; }
+.Admin_Nav_Header {	font-size: 12px; color: #ffffff; background-color: #666666; margin: 0px; padding: 3px; text-indent: 5px; }
+.Admin_Nav p { margin: 0; padding: 5px 0; }
+.Admin_Nav UL { padding: 0 10px; margin: 0 0 0 15px; font-size: 10px; line-height: 18px; }
+
+/* Administrative Forms, Fields and Misc Pages */
+.AdminTopicHeader { font-size: 15px; padding: 0 0 3px; font-weight: bold;  width: 710px; }
+/* The old css tools */
+.AdminDirections { background-color: #C3C4C5; padding: 5px; font-size: 11px; margin-bottom: 10px; width: 710px; }
+.AdminToolBar { background-color: #C3C4C5; padding: 0px; font-size: 11px; width: 720px; }
+
+/* the new css tools */
+.AdminInstructions { background-color: #FFFFE0; padding: 5px; font-size: 11px; width: 870px; border: 1px solid #999; border-bottom: none; }
+.AdminUtilityBar { background-color: #C3C4C5; padding: 0px; font-size: 11px; width: 880px; border: 1px solid #999; border-bottom: none; }
+
+.AdminFormName { font-size: 11px; font-weight: bold; padding: 0px 0px 2px 0px;}
+.AdminFormRequired { font-size: 11px; color: #666666; }
+.AdminFormField { margin: 0px 0px 8px; border: 1px solid #000000;}
+.AdminFormButton { margin: 3px 10px 20px 0px; }
+
+
+
+/* Bottom of the page CSS */
+DIV.Copyright { padding: 5px; }
+.Copyright { font-size: 10px; line-height: 16px; color: #ffffff; margin: 0px; padding: 0px; text-decoration: none;}
+.Copyright a {text-decoration: underline; color: #ffffff;}
+
+
+/* Error and Information message colors */
+DIV.Messages { margin: 5px 5px 5px 0; font-weight: bold;  }
+DIV.Messages .ErrorMessage { color: black; background-color: #EFD1D1; padding: 2px; margin: 2px 0 0; border: 1px solid black; font-size: 10px; }
+DIV.Messages .ErrorMessage A { color: yellow; }
+DIV.Messages .InfoMessage { color: black; background-color: #CEFFBF; padding: 5px; margin: 0; border: 1px solid black; }
+.Warning { color: #BF0000; }
+
+/* Changing the look of the buttons to be less-blocky */
+INPUT, SELECT, BUTTON {	vertical-align: middle; }
+INPUT, SELECT, TEXTAREA { border: 1px solid rgb(136, 136, 136);	font-size: 11px; }
+.BUTTON { border: 1px solid rgb(68, 68, 68); background-color: rgb(255, 255, 255); color: rgb(68, 68, 68); font-weight: normal; background-image: url(../images/button_back.gif); }
+
+/* This is the Table Listing */
+TABLE.list { clear: both; border: 0; border-spacing: 0; border-collapse: separate; border: 1px solid #9e9e9e; }
+.list TD, .list TH { padding-left: 5px; padding-right: 5px; }
+.list TD { border-top: 1px solid #cccccc; font-size: 11px; padding-bottom: 3px; padding-top: 3px; color: inherit; }
+.list TD.Action { padding: 0; white-space: nowrap; }
+.list TD.Action A { display: block; padding-bottom: 3px; padding-top: 3px; padding-left: 5px; padding-right: 5px; text-decoration: none; }
+.list TD.Action A:hover { color: white; background-color: #2865c7; }
+.list TH { background: #999999 url(../../images/list_head.gif) repeat-x scroll left top; font-size: 11px; color: #666666; font-weight: bold; height: 20px; white-space: nowrap; }
+.list TH.sortedby { background: #bbbbbb url(../../images/list_head_sortedby.gif) repeat-x scroll left top; }
+.list TH IMG { vertical-align: middle; }
+.list TH A, .list TH A:hover, .list TH A:visited { color: #666666; text-decoration: none; }
+A.listlink, A.listlink:hover, A.listlink:visited, A.listlink:hover { color: inherit; text-decoration: inherit; font-weight: inherit; }
+TR.Highlight TD { background-color: #3875D7; color: white; }
+
+
+/***** keyword search *********************************************************/
+#search { width: 196px; padding: 0; margin: 0; }
+#search select, #search input { font-size:11px; }
+#search input.sbox { color:#80808C; padding:3px; height:13px; width:100px; border:0; background:white url(../../images/search_bg.gif) repeat-x left top; }
+#search select { width:160px; }
+#search .srchimgs { border:0; }
+
+
+
+/*This is the Apple Monthly Calendar Control */
+.ip, #calendarmonth a.ip {color: #3F4BC0; font-size:10px} /* Introductory Presentations */
+.ws, #calendarmonth a.ws {color: #538100; font-size:10px} /* Workshops */
+.pd, #calendarmonth a.pd {color: #333333; font-size:10px} /* Pro Day */
+.mm, #calendarmonth a.mm {color: #FC7B00; font-size:10px} /* Made on a Mac */
+.wm, #calendarmonth a.wm {color: #6C006C; font-size:10px} /* Works on a Mac */
+.sn, #calendarmonth a.sn {color: #CBB200; font-size:10px} /* School Night */
+.ss, #calendarmonth a.ss {color: #BA0000; font-size:10px} /* Studio Series */
+.gu, #calendarmonth a.gu {color: #5B8383; font-size:10px} /* Genius Unplugged */
+.se, #calendarmonth a.se {color: #5C2E00; font-size:10px} /* Special Events */
+.pw, #calendarmonth a.pw {color: #919191; font-size:10px} /* Pro Workshops */
+.cw, #calendarmonth a.cw {color: #1B3F1D; font-size:10px} /* Custom Workshops */
+.ug, #calendarmonth a.ug {color: #3366CC; font-size:10px} /* User Groups */
+.bd, #calendarmonth a.bd {color: #555555; font-size:10px} /* User Groups */
+
+#calendarmonth div.ip {border-left: 5px solid #3F4BC0;} /* Introductory Presentations */
+#calendarmonth div.ws {border-left: 5px solid #538100;} /* Workshops */
+#calendarmonth div.pd {border-left: 5px solid #333333;} /* Pro Day */
+#calendarmonth div.mm {border-left: 5px solid #FC7B00;} /* Made on a Mac */
+#calendarmonth div.wm {border-left: 5px solid #6C006C;} /* Works on a Mac */
+#calendarmonth div.sn {border-left: 5px solid #CBB200;} /* School Night */
+#calendarmonth div.ss {border-left: 5px solid #BA0000;} /* Studio Series */
+#calendarmonth div.gu {border-left: 5px solid #5B8383;} /* Genius Unplugged */
+#calendarmonth div.se {border-left: 5px solid #5C2E00;} /* Special Events */
+#calendarmonth div.pw {border-left: 5px solid #919191;} /* Pro Workshops */
+#calendarmonth div.ug {border-left: 5px solid #3366CC;} /* User Groups */
+#calendarmonth div.bd {border-left: 5px solid #555555;} /* User Groups */
+
+#calendarmonth TH {
+	padding: 0;
+	background-color: #dadada;
+	text-align: left;
+}
+#calendarmonth TD {
+	padding: 1px;
+}
+#calendarmonth .days TH {
+	padding: 5px 5px 3px 8px;
+	background-color: #dadada;
+}
+TABLE#calendarmonth {
+	border: 0;
+	margin-bottom: 10px;
+	border-collapse: separate;
+	border-spacing: 1px;
+}
+TABLE#calendarmonth P {
+	padding: 0;
+	margin: 0;
+}
+TABLE#calendarmonth div.top {
+	border-left: 5px solid black;
+	border-top: 5px solid black;
+	font-size: 14px;
+	font-weight: bold;
+	height: 25px;
+	padding: 3px 0 0 3px;
+}
+
+TABLE#calendarmonth div.info { 
+	font-size:10px;
+	font-weight: bold;
+	padding: 2px 0 0 4px;
+	margin: 1px 0;
+	background-color: #F6F6F6;
+	height: 75px;	
+	border-bottom: 1px solid #CCC;
+}
+
+#calendarlegend a {text-decoration: none; font-size: 10px; font-family: 'Lucida Grande', Geneva, Verdana, Arial, sans-serif; font-weight: bold;}
+#calendarlegend a:hover {text-decoration: underline;}
+#calendarlegend li {padding-bottom: .3em;}
+
+table#calendarlegend {
+	border-collapse: separate;
+	border-spacing: 1px;
+}
+table#calendarlegend td {
+	text-align: left;
+	vertical-align: top;
+	padding: 5px 5px 5px 8px;
+	background-color: #f6f6f6;
+	font-size:10px;
+	font-weight: bold;
+}
+
+
+
+TABLE.Calendar { border-left: 1px solid black; border-top: 1px solid black; }
+TABLE.Calendar TH {	border-bottom: 1px solid #8e8e8e; font-size: 11px; color: #666666; font-weight: bold; height: 20px; text-align: left; }
+TABLE.Calendar TH, TABLE.Calendar TD { border-right: 1px solid black; border-bottom: 1px solid black; width: 1in; white-space: nowrap; }
+TABLE.Calendar INPUT { vertical-align: middle; }
+TABLE.Calendar TH { background: #999999 url(../../images/list_head.gif) repeat-x scroll left top; }
+
+.fader .imgMargin { margin-top: 15px; }
+
+/* This is the boxes around chunks of info */
+.sectionInfo { margin-bottom: 10px; }
+.sectionInfo .sectionHeader { font-size: 12px; font-weight: bold; padding: 3px 5px; background-color: #C3C4C5; }
+.sectionInfo .sectionContent { font-size: 10px;	padding: 10px; border: 1px solid #C3C4C5; }
+.sectionInfo .noHeader { font-size: 10px; padding: 10px 0; }
+
+
+/* This specific field header info */
+.form { margin-bottom: 10px; }
+.form .formHeader { font-weight: bold; }
+.form .formDisplay { margin-left: 3px; color: #666; }
+
+.Required { color: #999; font-weight: 200; font-size: 10px; }
+
+
+/* Error and Information message colors */
+.Messages { margin-bottom: 1em; font-weight: bold; }
+.Messages .ErrorMessage { color: black; background-color: #EFD1D1; padding: 5px; margin: 0; border: 1px solid black; }
+.Messages .ErrorMessage P { font-size: 10px; }
+.Messages .ErrorMessage A { color: yellow; }
+.Messages .InfoMessage { color: black; background-color: #CEFFBF; padding: 5px; margin: 0; border: 1px solid black; font-size: 10px; }
+.Messages .InfoMessage P { font-size: 10px; }
+.Warning { color: #BF0000; }
+
+table.TwoColumns { padding: 0; margin: 0; width: 100%; } 
+table.TwoColumns TD.Left { width: 49.5%; vertical-align: top; }
+table.TwoColumns TD.Right { width: 49.5%; vertical-align: top; }
+table.TwoColumns TD.Gutter { width: 1%; }
+
+
+
+
+
+TABLE.Tabs {
+	width: 100%;
+	font-size: 10px;
+}
+TABLE.Tabs TD.TheRest {
+	padding-left: 5px;
+	width: 99%;
+}
+TABLE.Tabs TD {
+	vertical-align: bottom;
+}
+TABLE.Tabs TD A, TABLE.Tabs TD A:visited, TABLE.Tabs TD A:active, TABLE.Tabs DIV.NoLink {
+	background-color: #dfdfdf;
+	color: black;
+	text-decoration: none;
+	border: 1px solid gray;
+	border-bottom: 0;
+}
+TABLE.Tabs TD A, TABLE.Tabs TD A, TABLE.Tabs DIV.NoLink {
+	display: block;
+	white-space: nowrap;
+	padding-left: 1em;
+	padding-right: 1em;
+	margin-left: 5px;
+	line-height: 22px;
+	border-bottom: 0;
+}
+TABLE.TightTabs TD A {
+	padding-left: 3px;
+	padding-right: 3px;
+	text-align: center;
+	font-size: 11px;
+	min-width: 1em;
+}
+TABLE.Tabs TD A:hover {
+	text-decoration: underline;
+	color: black;
+}
+TABLE.Tabs TD.Current A, TABLE.Tabs TD.Current A:visited, TABLE.Tabs TD.Current DIV.NoLink {
+	color: white;
+	background-color: #303030;
+}
+TABLE.Tabs TD INPUT, TABLE.Tabs TD SELECT {
+	color: black;
+	font-size: 10px;
+}
+
+li.rightNavActive { background: #C3C4C5; margin: 3px 3px 3px -12px; padding-left: 12px; }
+li.rightNavInactive { margin: 3px 0 3px 0; }
+
+/* These are for displaying the error and information messages on the screen. */
+div.ErrorMessage { background: #FFBFC5; color: #601319; border-left: 3px solid #601319; padding: 2px 4px; margin: 2px 0; }
+div.ErrorMessage A { color: black; }
+div.infoMessage { background-color: #B3EFB5; color: #144F16; border-left: 3px solid #144F16; padding: 2px 4px; margin:0 0 4px; }
+div.infoMessage A { color: black; }
+
+.warning { text-align: center; border: 1px solid #666; width: 400px; margin: auto; background: #fff; margin-top: 200px; display: block; }
+.warning .red { background: #6F0000; color: #fff; padding: 10px; font-size: 16px; }
+.warning .body { padding: 15px 10px; }
+
+.notice { text-align: center; border: 1px solid #666; width: 400px; margin: auto; background: #fff; margin-top: 200px; display: none; }
+.notice .green { background: #A4EFAC; color: #000; padding: 10px; font-size: 16px; }
+.notice .body { padding: 15px 10px; }
+
+.normal { display: block; }
+.overlaypage { display: none; text-align: center; }
+.overlaypage .gray { position: absolute; top: 0; left: 0; height: 100%; width: 100%; opacity: .5; filter: alpha(opacity=50); background: #333; z-index: 10; }
+.overlaypage .message { position: absolute; top: 0; left: 0; height: 100%; width: 100%; z-index: 20; }
+
+
+/* this is the navigation Drop down CSS */
+/* This section is specifically the main displayed values */
+.navstyle { vertical-align: top; font-size: 11px; }
+/*.navstyle:after { /*Add margin between menu and rest of content in Firefox content: "."; display: block; height: 0; clear: both; visibility: hidden; }*/
+.navstyle ul { padding: 0; margin: 1px 10px 0; }
+.navstyle ul li { display: inline; vertical-align: middle; }
+.navstyle ul li a { color: #000; text-decoration: none; padding: 3px 10px 5px; }
+.navstyle ul li a:hover { background: #5D778E; }
+
+/* This section is specifically the items that appear in the drop down itself. */
+
+.dropmenudiv { margin: -1px; position: absolute; top: 0; border: 1px solid #BBB; border-bottom-width: 0; font: normal 10px Verdana; line-height:18px; text-align: left;
+z-index:100; background-color: #5D778E; width: 165px; visibility: hidden; filter: progid:DXImageTransform.Microsoft.Shadow(color=#CACACA,direction=135,strength=4); /*Add Shadow in IE. Remove if desired*/ }
+
+.dropmenudiv a { white-space: nowrap; display: block; text-indent: 3px; border-bottom: 1px solid #fff; padding: 2px 5px 2px 0px; text-decoration: none; color: white; }
+.dropmenudiv ul { margin: 0; padding: 0; }
+.dropmenudiv li { list-style-type: none; margin: 0; padding: 0; }
+
+* html .dropmenudiv a { /*IE only hack*/ width: 100%; }
+.dropmenudiv a:hover { background-color: #3D5569; }

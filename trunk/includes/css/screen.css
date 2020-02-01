@@ -1,0 +1,167 @@
+@import url('style.css');
+@import url('CalendarControl.css');
+
+BODY {
+	background-color: #eeeeee;
+	margin: 0;
+}
+BODY.PopUp {
+	background-color: white;
+	margin: .5em;
+}
+
+.PrintOnly {
+	display: none;
+}
+
+#BodyCell {
+}
+
+TR.Highlight TD {
+	background-color: #3875D7;
+	color: white;
+}
+TR.Highlight TD A.listlink, TR.Highlight TD A.listlink:hover {
+	color: white;
+}
+
+H1, H2 {
+	color: #164FA6;
+	font-size: 13px;
+}
+#Banner {
+	font-size: 16px;
+	font-weight: bold;
+	color: white;
+	background-color: #164FA6;
+	padding: .1in;
+	padding-bottom: .05in;
+	vertical-align: top;
+	text-align: left;
+}
+#Navigation {
+	font-size: 11px;
+	font-weight: normal;
+	background-color: #666666;
+	color: white;
+	padding-top: .05in;
+	padding-left: .05in;
+	padding-right: .05in;
+}
+#Navigation TABLE {
+	width: 100%;
+}
+#Navigation TD {
+	text-align: center;
+	white-space: nowrap;
+}
+#Navigation TD.TheRest {
+	width: 99%;
+}
+#Navigation A, #Navigation A:visited {
+	color: inherit;
+	font-weight: inherit;
+	text-decoration: inherit;
+	display: block;
+	padding: .075in;
+}
+#Navigation A:hover {
+	text-decoration: underline;
+}
+#Navigation TD.Current {
+	background-color: #3595DF;
+	color: white;
+}
+#Navigation TD.Current A {
+	cursor: default;
+}
+#Navigation TD.Current A:hover {
+	text-decoration: inherit;
+}
+
+#SubNavigation {
+	font-size: 11px;
+	font-weight: normal;
+	background-color: #3595DF;
+	color: white;
+	padding: .05in;
+	padding-left: .05in;
+	padding-right: .05in;
+	padding-bottom: 0;
+}
+#SubNavigation TABLE {
+	width: 100%;
+}
+#SubNavigation TD {
+	text-align: center;
+	white-space: nowrap;
+}
+#SubNavigation TD.TheRest {
+	width: 99%;
+}
+#SubNavigation A, #SubNavigation A:visited {
+	color: inherit;
+	font-weight: inherit;
+	text-decoration: inherit;
+	display: block;
+	padding: .05in;
+	padding-left: .075in;
+	padding-right: .075in;
+	padding-bottom: .1in;
+}
+#SubNavigation A:hover {
+	text-decoration: underline;
+}
+#SubNavigation TD.Current {
+	background-color: white;
+	color: black;
+}
+#SubNavigation TD.Current A {
+	text-decoration: none;
+	cursor: default;
+}
+#SubNavigation TD.Current A:hover {
+	text-decoration: inherit;
+}
+
+#NavigationFade {
+	border-top: .025in solid #459EE0;
+	height: 5px;
+}
+#NavigationFade, .NavigationFade {
+	background-image: url(../images/nav_bottom.png);
+}
+.NavigationFade {
+	background-position: left bottom;
+	background-repeat: repeat-x;
+}
+
+#Body {
+	overflow: auto;
+}
+
+FIELDSET#Login {
+	padding: .15in;
+	margin-left: 2in;
+	margin-top: 2in;
+	width: 3in;
+}
+FIELDSET#Login LEGEND {
+	display: none;
+}
+
+.list TH {
+	background: #999999 url(../images/list_head.gif) repeat-x scroll left top;
+}
+.list TH.sortedby {
+	background: #bbbbbb url(../images/list_head_sortedby.gif) repeat-x scroll left top;
+}
+
+DIV.WithinTabs DIV.WithinTabs {
+	background-color: #fafafa;
+}
+
+#calendarmonth DIV.Item A:hover {
+	background-color: #3875D7;
+	color: white;
+}

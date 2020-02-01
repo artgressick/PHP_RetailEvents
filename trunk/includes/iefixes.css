@@ -1,0 +1,29 @@
+
+A.listlink, A.listlink:visited, A.listlink:hover, A.listlink:active {
+	color: black;
+	font-weight: normal;
+	text-decoration: none;
+	text-decoration: inherit;
+}
+
+TR.strong TD {
+	font-weight: bold;
+}
+
+#Navigation A, #Navigation A:visited, #SubNavigation A, #SubNavigation A:visited {
+	color: white;
+	font-weight: normal;
+	text-decoration: none;
+}
+#Navigation A:hover {
+}
+#Navigation TD.Current A:hover {
+}
+
+#SubNavigation .Current A, #SubNavigation .Current A:visited {
+	color: black;
+}
+
+#NavigationFade {
+	font-size: 1px;
+}

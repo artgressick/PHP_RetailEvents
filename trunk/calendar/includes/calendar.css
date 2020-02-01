@@ -1,0 +1,55 @@
+/* Day / Week Calendar */
+
+/* Menu bar across the top */
+.calmenubar { width: 100%; margin-bottom: 5px; }
+.calmenubar td { vertical-align: bottom; padding-top: 7px; }
+.calmenubar .sides { padding: 0; margin: 0;}
+.calmenubar .subscribe a { color: blue; text-decoration: none; }
+.calmenubar .subscribe a:hover { text-decoration: underline; }
+.calmenubar .datetime { font-size: 14px; font-weight: bold; }
+.calmenubar .quickjump { text-align: center; }
+.calmenubar .currentdates { text-align: right; }
+
+/* From with the menu options on the left side */
+.calframe { width: 880px; }
+.calframe td { vertical-align: top; }
+.calframe .calmenu { width: 140px; padding-right: 10px; font-size: 10px; }
+.calframe .calcontent { width: 740px; vertical-align: top; }
+
+.calframe .calmenu .clickTitle { background-image:url(../images/left-top.png); font-size: 12px; border: 1px solid gray; border-bottom: none; padding: 4px 2px; }
+.calframe .calmenu .clickTitleBottom { background: #ccc; font-size: 12px; border: 1px solid gray; padding: 4px 2px; }
+.calframe .calmenu .clickBox { height: 400px; border: 1px solid gray; border-bottom: none; }
+.calframe .calmenu .clickBoxBottom { height: 400px; border: 1px solid gray; border-top: none; }
+
+/* Week Calendar Css */
+.calweekday { width: 740px; border: 1px solid gray; border-top: 0; }
+.calweekday td { vertical-align: top; }
+.calweekday .time { width: 46px; font-size: 10px; color: #666; background: #eee; border-right: 1px solid gray; }
+.calweekday .hour { border-top: 1px solid gray; }
+.calweekday .minute { border-top: 1px dotted gray; }
+.calweekday .addcalevent { width: 1px; }
+
+/* Month Calendar Css */
+.calmonth { width: 740px; border: 1px solid gray; border-right: 0; }
+.calmonth td { vertical-align: top; }
+.calmonth th { width: 105px; border-right: 1px solid gray; background: #bbb; font-weight: bold; font-size: 10px; padding: 2px 0; }
+.calmonth .diffmonth { border-right: 1px solid gray; border-top: 1px solid gray; background: #eee; color: #666; vertical-align: top; font-size: 10px; }
+.calmonth .daybox { vertical-align: top; width: 125px; font-size: 10px; height: 100px; white-space: normal; border-right: 1px solid gray; border-top: 1px solid gray; }
+.calmonth .dom { text-align: right; }
+.calmonth .fright { float: right; }
+.calmonth .fleft { float: left; }
+.calmonth .clear { clear: both; }
+
+/* Month Calendar Css */
+.calyear { width: 740px; border: 1px solid gray; border-right: 0; }
+.calyear td { vertical-align: top; padding: 10px; }
+
+.calminiyear { width: 230px; border: 1px solid gray; border-right: 0; margin: 0 auto; }
+.calminiyear th { border-right: 1px solid gray; background: black; color: white; font-weight: bold; padding-top: 3px; padding-bottom: 3px;}
+.calminiyear .days { text-align: center; border-right: 1px solid gray; background: #bbb; font-weight: bold; font-size: 10px; padding: 2px 0; }
+.calminiyear .diffmonth { border-right: 1px solid gray; border-top: 1px solid gray; background: #eee; color: #666; vertical-align: top; font-size: 10px; }
+.calminiyear .daybox { vertical-align: top; font-size: 10px; height: 30px; white-space: normal; border-right: 1px solid gray; border-top: 1px solid gray; }
+.calminiyear .dom { text-align: right; }
+.calminiyear .fright { float: right; }
+.calminiyear .fleft { float: left; }
+.calminiyear .clear { clear: both; padding: 2px; text-align: center; }
